@@ -5,9 +5,16 @@ metadata:
 spec: 
   type: NodePort
   ports: 
+      # This is the port that other applications inside the node can 
+      # use to gain access to the 'client-pod'.
     - port: 3050 
-      # the container port where we are redirecting the request
+      # The container port where we are redirecting the request.
+      # Related to the "containerPort" property in client-pod.yml.
       targetPort: 3000  
+      # This is the port that gets exposed to the outside world.
+      # We can use this port to access the client pod.
+      # Must be a number between 30000 - 32767.
+      # To access the client container we could use `localhost:31515`
       nodePort: 31515
   selector: 
     component: web 
