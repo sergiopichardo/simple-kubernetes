@@ -5,8 +5,9 @@ metadata:
 spec: 
   type: NodePort
   ports: 
-    - ports: 3050 
-      targetPort: 3000
+    - port: 3050 
+      # the container port where we are redirecting the request
+      targetPort: 3000  
       nodePort: 31515
   selector: 
     component: web 
