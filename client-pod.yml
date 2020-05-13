@@ -10,4 +10,4 @@ spec:
       image: stephengrider/multi-client
       ports: 
         # Container will listen internally on port 3000
-        - containerPort: 9999
+        - containerPort: 3000
